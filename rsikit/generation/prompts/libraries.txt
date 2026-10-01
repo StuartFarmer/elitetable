@@ -1,0 +1,25 @@
+Scientific libraries in the standard Docker worker:
+- numpy: arrays, random sampling and linear algebra (numpy.linalg.solve, lstsq).
+- scipy: reliable numerical methods. Use scipy.linalg.solve_discrete_are or
+  solve_continuous_are for Riccati equations; scipy.optimize.minimize for bounded
+  numerical optimization; scipy.signal for filtering and discretization.
+- control (python-control): state-space models, LQR and observers. Use
+  control.lqr(A, B, Q, R, method="scipy") or control.dlqr(..., method="scipy").
+  Slycot is not installed; avoid routines requiring it, such as hinfsyn/h2syn.
+- cvxpy: constrained convex optimization and model-predictive control. OSQP,
+  CLARABEL and SCS are installed. For QPs, problem.solve(solver="OSQP",
+  warm_start=True); check problem.status before using variable.value and keep a
+  valid fallback action. Reuse Problems and Parameters instead of rebuilding per step.
+- sklearn (scikit-learn): small learned dynamics and surrogate models, including
+  sklearn.linear_model.Ridge and sklearn.gaussian_process.GaussianProcessRegressor.
+- torch: CPU-only PyTorch for small neural models, differentiable dynamics and
+  automatic differentiation. Use device="cpu", torch.set_num_threads(1), and seed
+  torch.manual_seed from self.rng in reset. Use torch.no_grad() for inference;
+  enable gradients only when needed. Use eager execution, not torch.compile.
+Python's standard library, gymnasium and rsikit.Policy are also available.
+Choose libraries that fit the mechanism; do not use every library by default.
+Precompute expensive matrices/models in reset and bound per-action computation.
+Only observations/actions within the current episode are available: no reward
+input, environment access, pretrained downloads, or state across evaluation episodes.
+No network or runtime dependency installation. Missing imports and solver failures
+must be repaired using the actual diagnostic and available alternatives.

@@ -1,0 +1,48 @@
+{
+  "source_job": "c05debadc3ea4013ab8f84769f859551",
+  "source_group": "main-v2-amd64-episode45",
+  "source_release": "elitetable-c05debadc3ea4013ab8f84769f859551/release",
+  "original_revision": {
+    "source_revision": "b2417e7a1c343c890999a4b8cb606476fc97de09",
+    "source_dirty": true
+  },
+  "source_sha256": {
+    "alphaevolve/edits.py": "0a0f74b6779dab89a0520c56fedc4c517109cfddfe1f7039ab84afaddb4ae976",
+    "elitesearch/agent.py": "b484a1d3d8feb1764589759f56ff5bc583984a0f93777b25fead83f7e81423d8",
+    "elitesearch/prompts/context.j2": "9932c1a7a4d862b075a55da0f678bb3bdfa7818244d773253fbd6c084843527e",
+    "elitesearch/prompts/edit.j2": "4748d7e601954f77100dda73cd38d73f7d334c2401e5c933a79a2ceaa340e5e6",
+    "elitesearch/prompts/new.j2": "2431730cb07ec2493928d6e4c3989e548f80e82c9b0aaf0268333599e9254384",
+    "elitesearch/prompts/remix.j2": "783157dd713894d057223c581a8e5c6820c2d93e214775434ea973f77848967b",
+    "elitesearch/prompts/repair.j2": "3c6bbb9990fe4f7f2491d427b975e0bc3476ba19266ad143c8fb95670ba906e7",
+    "elitesearch/records.py": "7abab64e6f631ece88febfc8bb8604106b3f586d853b2972e22e4428b5b3a190",
+    "examples/elitelist_papers/run.py": "fa6726d89ce8329323c5752c10166df0d0c85d133a628cf04c411f5d1008a75d",
+    "examples/elitesearch.py": "b656b2efe9cc20049c90f8beac8e6bed2ab2d047ee8334d09c7c5800d2e12c8c",
+    "rsikit/__init__.py": "c2c66d786027f4612fdcc7df465ac72201c58ea4913cafe3e32d56e77e88cc5b",
+    "rsikit/episode.py": "28910d900ab7b363d0fb36f7d174b1269e109ba255276564f3627479bdebcb00",
+    "rsikit/execution.py": "c63764fd6a9494409bdb6ee4a850f26cbdf68e6a9e4af28962e2f03a5ddc0291",
+    "rsikit/generation/__init__.py": "23091ed38722bcbab81737353d979bc15dec098561b71c1def84542f6b1ea87f",
+    "rsikit/generation/prompts/libraries.txt": "4fd7b5ee11043c3cea1657d6141c0c47fae6b962b06a49495e42a8c3e4f0bed8",
+    "rsikit/policy.py": "4e4bf6a2fe50a2ee3b019ca004fcaed7a3b3b246bc4af38ee82b6958394f032e",
+    "rsikit/run.py": "1661b7b0de1b0d67209b41155a18ad973bb2b9ca1862be81eac28d4e582a6072",
+    "rsikit/sandbox/__init__.py": "75f3306b0054213c43b3ed5d36fdf7fdbbb21db49bbec357d924e1de5877d191",
+    "rsikit/sandbox/check_libraries.py": "acdb17e1a59355ba03b8b5f03e98f9021672e07b434658b7e86c493704443764",
+    "rsikit/sandbox/codec.py": "497347c6b12ae6d7417fc530ab084461da01ed0d6538c8f4a35ab10d1529885b",
+    "rsikit/sandbox/docker.py": "8d5ab051bf9f73e75860b3a74e5a5750530cb3a4940d84553a21b11f7c57a53c",
+    "rsikit/sandbox/evaluate.py": "040d74a9ac4d7f847d6f518ddd6328d100c36873b772fdedffe6175e0b244605",
+    "rsikit/sandbox/in_process.py": "a42c496fb52ce828378121b75acdb267c13d3622c6dbbd9dc98c935b788b4981",
+    "rsikit/sandbox/service.py": "d6a4ca679ed122bd44850ebfef648c77498bf0ecab52695efd79739d276fe47a",
+    "rsikit/sandbox/worker.py": "8cca448d278ca850423a8549d5c624c6f102f77071b6002543f75469db24034b",
+    "study.json": "b33fe458a80628b1796e77133bcd4187bc6aa32af4174449f8d718ea8bc944bd",
+    "tools/analyze.py": "da7743c3e9be921f4f0790d80bd7ed7e0a25f38cf0d1b2160b074186d493d5f1",
+    "tools/results.py": "ad047741e53fb006d84480c25903e38b8566d0d22a661a309b4d3139ebd575bb",
+    "worker-environment.json": "8c485bb08c8d1ee2aef45c2f59904566dcc8a7a88009f676dc6df4b54ec92b5d"
+  },
+  "notes": [
+    "Search class renamed to EliteTable and package imports relocated.",
+    "Prompt renderer is package-local; tests require original request hashes.",
+    "Runner UI removed; scientific defaults set to executed study; dry-run/batch/image preflight added.",
+    "Required RSIKit worker/evaluator implementations retained; no custom environments or other optimizers.",
+    "Offline analysis extracted from notebook into standalone analyze.py; compact evidence carries original per-run hashes.",
+    "This is a repackaging, not a byte-identical original release."
+  ]
+}

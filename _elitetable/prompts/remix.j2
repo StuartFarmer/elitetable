@@ -1,0 +1,18 @@
+Create a new organism by combining the useful aspects of multiple elites below.
+Identify complementary mechanisms and integrate them into one coherent executable
+policy. Do not merely rename or copy a parent. You may redesign the architecture;
+the new organism is not restricted to one parent's editable regions. Its description
+must explain what it inherits from the contributing parents. Return complete source.
+
+{% include 'context.j2' %}
+
+{% for parent in parents %}
+Elite {{ parent.id }}: {{ parent.name }} — {{ parent.description }}
+Measured mean: {{ parent.score }}; seed rewards: {{ parent.seed_scores | tojson }}
+<source>
+{{ parent.implementation }}
+</source>
+{% endfor %}
+
+Return only JSON matching this schema. No Markdown fences:
+{{ schema | tojson }}

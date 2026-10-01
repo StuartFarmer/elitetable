@@ -1,0 +1,13 @@
+Invent a new organism: an independent, distinct approach, rather than a small
+variation on the current elites. Proposal {{ proposal }} should explore a different
+mechanism, representation, or control strategy. Return its complete source code.
+
+{% include 'context.j2' %}
+
+Existing elite approaches to distinguish this idea from:
+{% for elite in elites %}
+- {{ elite.name }}: {{ elite.description }} (measured score {{ elite.score }})
+{% endfor %}
+
+Return only JSON matching this schema. No Markdown fences:
+{{ schema | tojson }}

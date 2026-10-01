@@ -1,0 +1,7 @@
+environment,planned,started,completed,eligible,valid_final,paired_searches,final_median,improvement_median,improvement_ci_low,improvement_ci_high,improved_searches,search_target_reached,heldout_target_reached,representative,valid_random,random_median
+CartPole-v1,10,10,10,10,10,10,500.0,0.0,0.0,0.0,0,10,10,main-v2-amd64-episode45-CartPole-v1-0,10,21.87
+MountainCar-v0,10,10,10,10,10,10,-107.065,7.410000000000011,2.5649999999999977,22.474999999999994,10,4,6,main-v2-amd64-episode45-MountainCar-v0-4,10,-200.0
+Acrobot-v1,10,10,10,10,10,10,-101.525,-6.375,-18.64,7.980000000000004,4,10,3,main-v2-amd64-episode45-Acrobot-v1-2,10,-500.0
+LunarLander-v3,10,10,10,10,10,10,214.0443698591905,189.3061026643211,109.2535631306389,260.1970328012938,10,8,6,main-v2-amd64-episode45-LunarLander-v3-4,10,-200.8072868421234
+BipedalWalker-v3,10,10,10,10,10,10,-7.648553676605225,42.273011825084694,5.893381366729737,55.94424345389009,10,0,0,main-v2-amd64-episode45-BipedalWalker-v3-5,10,-101.01655242919922
+CarRacing-v3,10,10,10,10,10,10,691.8104695275915,507.108533855396,421.1968596063464,629.1345374152909,10,0,0,main-v2-amd64-episode45-CarRacing-v3-4,10,-32.68080680723453

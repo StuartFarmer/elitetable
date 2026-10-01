@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "elitetable"
+version = "0.1.0"
+description = "EliteTable program search and reproducible control-policy experiments"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "numpy==2.5.3",
+    "gymnasium==1.3.0",
+    "slick-ai==0.3.0",
+    "pydantic==2.13.5",
+    "sqlmodel==0.0.47",
+    "cloudpickle==3.1.2",
+    "rich==15.0.0",
+    "jinja2==3.1.6",
+    "sqlalchemy==2.0.54",
+]
+
+[project.optional-dependencies]
+run = ["slick-ai[openai]==0.3.0", "openai==2.54.0", "gymnasium[classic-control]==1.3.0", "box2d-py==2.3.8"]
+analysis = ["matplotlib==3.11.0"]
+
+[tool.uv.extra-build-dependencies]
+box2d-py = ["swig>=4,<5"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["_elitetable", "rsikit"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"elitetable.py" = "elitetable.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["elitetable.py", "run.py", "analyze.py", "_elitetable/", "rsikit/", "tests/", "data/", "study.json", "worker-environment.json", "SOURCE_PROVENANCE.json", "Dockerfile", ".dockerignore", "requirements-*.txt", "README.md", "PROVENANCE.md", "pyproject.toml", "uv.lock"]
